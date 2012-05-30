@@ -56,6 +56,6 @@ def atomicmass(Z,A):
 #
 def atomicmass2(Z,A):
   n = neutron()
-  p = hydrogen()
+  p = proton()
   e = electron()
   return Z*p.mass + (A-Z)*(n.mass + e.mass) - bindingEnergy(Z,A)
