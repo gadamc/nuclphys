@@ -22,7 +22,7 @@ class electron(_particle):
     _particle.__init__(self, -1, 0.511)
     
   
-#semi-empirical mass formula parameters.
+#semi-empirical mass formula parametersself.
 a_v = 15.56
 a_s = 17.23
 a_c = 0.697
@@ -53,3 +53,9 @@ def atomicmass(Z,A):
   h = hydrogen()
   return Z*h.mass + (A-Z)*n.mass - bindingEnergy(Z,A)
   
+#
+def atomicmass2(Z,A):
+  n = neutron()
+  p = hydrogen()
+  e = electron()
+  return Z*p.mass + (A-Z)*(n.mass + e.mass) - bindingEnergy(Z,A)
